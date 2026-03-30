@@ -2,7 +2,7 @@
 <h3 align="center">Building with LLMs, prompts, and generative systems</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Exploring+LLMs+and+Agents.;Prompting+ideas+into+systems.;Learning+what+works+and+what+doesn’t." />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Exploring+LLMs+and+Agents.;Turning+prompts+into+systems.;Figuring+out+what+actually+works." />
 </p>
 
 ---
@@ -36,4 +36,13 @@
 - Agent-based systems  
 - Retrieval-Augmented Generation  
 
+---
+
+## ⚙️ Tech Stack
+
+| 💼 Domain | 🔧 Tools |
+|----------|--------|
+| **Languages** | ![Python](https://img.shields.io/badge/python-8A2BE2?style=for-the-badge&logo=python&logoColor=white) |
+| **Frameworks** | ![LangChain](https://img.shields.io/badge/LangChain-8A2BE2?style=for-the-badge) ![Transformers](https://img.shields.io/badge/Transformers-8A2BE2?style=for-the-badge&logo=huggingface&logoColor=white) |
+| **Tools** | ![OpenAI](https://img.shields.io/badge/OpenAI-8A2BE2?style=for-the-badge) ![HuggingFace](https://img.shields.io/badge/HuggingFace-8A2BE2?style=for-the-badge) |
 
