@@ -1,0 +1,41 @@
+name: Update Generative AI README
+
+on:
+  push:
+    paths:
+      - 'generative-ai/**'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate project list
+        run: |
+          cd generative-ai
+          echo "" > list.md
+          for d in */ ; do
+            if [ "$d" != "./" ]; then
+              echo "- 🔹 [${d%/}](./${d%/})" >> list.md
+            fi
+          done
+
+      - name: Inject into README
+        run: |
+          awk '
+          /<!--START_SECTION:projects-->/ {print; system("cat generative-ai/list.md"); skip=1; next}
+          /<!--END_SECTION:projects-->/ {skip=0}
+          !skip
+          ' generative-ai/README.md > temp.md
+          mv temp.md generative-ai/README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-update Generative AI project list" || echo "No changes"
+          git push
