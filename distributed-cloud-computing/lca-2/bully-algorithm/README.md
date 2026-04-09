@@ -1,7 +1,7 @@
 <h1 align="center">Bully Election Algorithm</h1>
 <h3 align="center">DCC LCA-2</h3>
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Simulate+Process+Failure+and+Election,Using+C&fontcolor=2ecc71" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Simulate+Process+Failure+and+Election;Using+C&fontcolor=2ecc71" alt="Typing SVG" />
 </p>
 
 ---
