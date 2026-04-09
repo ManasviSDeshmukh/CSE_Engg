@@ -8,7 +8,7 @@
 - **Name:** Manasvi Deshmukh  
 - **PRN:** 1032222834
 - **Subject:** DCC (Distributed Computing Concepts)  
-- **Assignment:** LCA-2  
+ 
 
 ---
 
@@ -113,14 +113,7 @@ sequenceDiagram
 - Process failure simulation  
 - Manual election triggering  
 - Automatic election on coordinator failure  
-
-- **Colored logs:**
-  - Failure (Red)  
-  - Election (Yellow)  
-  - Coordinator (Green)  
-  - Internal operations (Grey)  
-
-- Clear separation of system-level and user-level logs  
+ 
 
 ---
 
@@ -170,22 +163,26 @@ gcc bully.c -o bully
 
 ## Screenshots
 
-- Initial process state 
+##### Initial process state 
   <img src="screenshots/initial-state.png" alt="Initial process state " width="500" height="auto">
-- Process failure simulation
+
+##### Process failure simulation
   <img src="screenshots/process-failure.png" alt="Process failure simulation " width="500" height="auto">  
-- Election process logs
+
+##### Election process logs
   <img src="screenshots/election-process.png" alt="Election process logs " width="500" height="auto">  
-- New coordinator selection
+
+##### New coordinator selection
   <img src="screenshots/new-coordinator.png" alt="New coordinator selection " width="500" height="auto">  
-- Manual election execution
+
+##### Manual election execution
   <img src="screenshots/manual.png" alt="Manual election execution " width="500" height="auto">  
 
 ---
 
 ## Conclusion
 
-The Bully Election Algorithm was successfully implemented and simulated using C. The system dynamically handles process failures and ensures correct election of a new coordinator. The use of structured logs and visual clarity makes it suitable for both demonstration and analysis.
+The Bully Election Algorithm was successfully implemented and simulated using C. The system dynamically handles process failures and ensures correct election of a new coordinator. 
 
 ---
 
