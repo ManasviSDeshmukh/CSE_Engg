@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bully Election Simulator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Bully Election Simulator</h1>
+    <p>Simulates leader election in distributed systems using Bully Algorithm</p>
+</div>
+
+<div class="main">
+
+    <!-- LEFT PANEL -->
+    <div class="left">
+
+        <!-- STEP 1 -->
+        <div class="card">
+            <h2>Step 1: Create Processes</h2>
+            <input type="number" id="num" placeholder="Enter number of processes">
+            <button onclick="createProcesses()">Create</button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="card">
+            <h2>Step 2: Select Mode</h2>
+            <button onclick="setMode('fail')">Simulate With Failure</button>
+            <button onclick="setMode('normal')">Simulate Without Failure</button>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="card">
+            <h2>Step 3: Action</h2>
+            <p id="instruction">Follow steps above</p>
+        </div>
+
+        <button class="restart" onclick="restart()">Restart</button>
+
+        <!-- PROCESS VISUAL -->
+        <div id="processContainer"></div>
+
+    </div>
+
+    <!-- RIGHT PANEL (LOGS) -->
+    <div class="right">
+        <h2>Logs</h2>
+        <div id="logsBox"></div>
+
+        <h3>Internal</h3>
+        <div id="internalBox"></div>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
