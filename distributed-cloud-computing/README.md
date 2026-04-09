@@ -25,6 +25,9 @@
 ## 📂 Work
 
 <!--START_SECTION:projects-->
+- Lamport Clock Algorithm
+- Bully Election Algorithm
+- Cloud App Deployment using Render
 <!--END_SECTION:projects-->
 
 ---
