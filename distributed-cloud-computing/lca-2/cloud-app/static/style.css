@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #000;
+    color: #e2e8f0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    border-bottom: 2px solid teal;
+}
+
+.main {
+    display: flex;
+}
+
+.left {
+    width: 60%;
+    padding: 20px;
+}
+
+.right {
+    width: 40%;
+    background: #020617;
+    padding: 20px;
+    border-left: 2px solid teal;
+}
+
+.card {
+    background: #0f172a;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+button {
+    background: teal;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #14b8a6;
+}
+
+.restart {
+    background: red;
+}
+
+#processContainer {
+    margin-top: 20px;
+}
+
+.process {
+    display: inline-block;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.alive { background: #1e293b; }
+.dead { background: red; }
+.leader { background: green; }
+
+#logsBox {
+    background: #111;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    color: #22c55e;
+}
+
+#internalBox {
+    background: #111;
+    padding: 10px;
+    height: 150px;
+    overflow-y: auto;
+    color: #aaa;
+}
