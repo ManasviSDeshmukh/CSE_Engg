@@ -179,7 +179,7 @@ gcc bully.c -o bully
 - New coordinator selection
   <img src="screenshots/new-coordinator.png" alt="New coordinator selection " width="500" height="auto">  
 - Manual election execution
-  <img src="screenshots/without-failure.png" alt="Manual election execution " width="500" height="auto">  
+  <img src="screenshots/manual.png" alt="Manual election execution " width="500" height="auto">  
 
 ---
 
