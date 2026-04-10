@@ -46,15 +46,44 @@ flowchart LR
 - Terminal: Ubuntu (WSL)
 
 ---
+## WSL & Ubuntu Installation in Windows
+
+### Step 1: Open PowerShell (IMPORTANT)
+- Press Windows Key
+- Search: PowerShell
+- Right-click → Run as Administrator
+
+### Step 2: Install WSL
+```bash
+wsl --install
+```
+- This installs:
+  - WSL
+  - Ubuntu
+
+<img src="screenshots/installation-wls-ubuntu.png" width="500">
+
+### Step 3: Restart the system 
+
+### Step 4: Open Ubuntu
+- Search: Ubuntu
+- Open it
+- First launch:
+  - Set username
+  - Set password
+
+---
 ## Implementation Steps
 
 ### Step 1: Install NFS Server and Client
+- In Ubuntu Terminal:
 ```bash
 sudo apt update
 sudo apt install nfs-kernel-server -y
 sudo apt install nfs-common -y
 ```
-<img src="screenshots/nfs-install.png" width="500">
+<img src="screenshots/nfs-server-install.png" width="500">
+<img src="screenshots/nfs-client-install.png" width="500">
 
 ### Step 2: Create Shared Directory (Server)
 ```bash
@@ -62,7 +91,7 @@ mkdir ~/nfs_shared
 chmod 777 ~/nfs_shared
 echo "Hello from Server" > ~/nfs_shared/test.txt
 ```
-<img src="screenshots/nfs-shared-dir.png" width="500">
+<img src="screenshots/server-created-shared-directory.png" width="500">
 
 ### Step 3: Configure NFS Exports
 - Open exports file:
@@ -78,39 +107,40 @@ sudo nano /etc/exports
 sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
 ```
-<img src="screenshots/nfs-exports.png" width="500">
+<img src="screenshots/nfs-server-config.png" width="500">
 
 ### Step 4: Create Client Mount Directory
 ```bash
 mkdir ~/nfs_client
 ```
-<img src="screenshots/nfs-client-dir.png" width="500">
 
 ### Step 5: Mount Shared Directory (Client)
 ```bash
 sudo mount -t nfs localhost:/home/your-username/nfs_shared ~/nfs_client
 ```
-<img src="screenshots/nfs-mount.png" width="500">
 
 ### Step 6: Verify Access
 - List files:
 ```bash
 ls ~/nfs_client
 ```
-<img src="screenshots/nfs-access.png" width="500">
+<img src="screenshots/client-setup.png" width="500">
 
 ### Step 7: Test File Sharing
 - Create file from client:
 ```bash
 echo "Hello from Client" > ~/nfs_client/client.txt
 ```
+<img src="screenshots/test-file-sharing.png" width="500">
+
 - Verify on server:
 ```bash
 ls ~/nfs_shared
 ```
-<img src="screenshots/nfs-file-sharing.png" width="500">
+<img src="screenshots/files-seen-on-server.png" width="500">
 
 ---
+
 ## Conclusion
 
 The NFS server and client were successfully configured using Ubuntu (WSL). The shared directory was mounted on the client, and file operations were verified, demonstrating seamless file sharing over a network.
