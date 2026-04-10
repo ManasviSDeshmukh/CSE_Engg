@@ -1,0 +1,111 @@
+===============================
+NFS SETUP COMMANDS (LCA-2)
+===============================
+
+# --------------------------------
+# PART 1: SYSTEM UPDATE
+# --------------------------------
+
+sudo apt update
+sudo apt upgrade -y
+
+
+# --------------------------------
+# PART 2: INSTALL NFS
+# --------------------------------
+
+# Install NFS Server
+sudo apt install nfs-kernel-server -y
+
+# Install NFS Client
+sudo apt install nfs-common -y
+
+
+# --------------------------------
+# PART 3: CREATE SHARED DIRECTORY (SERVER)
+# --------------------------------
+
+mkdir ~/nfs_shared
+chmod 777 ~/nfs_shared
+
+# Create test file
+echo "Hello from Server" > ~/nfs_shared/test.txt
+
+# Verify
+ls ~/nfs_shared
+
+
+# --------------------------------
+# PART 4: CONFIGURE NFS EXPORTS
+# --------------------------------
+
+# Check username
+whoami
+
+# Open exports file
+sudo nano /etc/exports
+
+# Add the following line (replace username):
+/home/your-username/nfs_shared *(rw,sync,no_subtree_check,no_root_squash)
+
+# Apply changes
+sudo exportfs -a
+
+# Restart NFS server
+sudo systemctl restart nfs-kernel-server
+
+
+# --------------------------------
+# PART 5: CLIENT SETUP
+# --------------------------------
+
+# Open new terminal (client side)
+
+# Create mount directory
+mkdir ~/nfs_client
+
+
+# --------------------------------
+# PART 6: MOUNT SHARED DIRECTORY
+# --------------------------------
+
+sudo mount -t nfs localhost:/home/your-username/nfs_shared ~/nfs_client
+
+# Verify mount
+ls ~/nfs_client
+
+
+# --------------------------------
+# PART 7: FILE SHARING TEST
+# --------------------------------
+
+# Create file from client
+echo "Hello from Client" > ~/nfs_client/client.txt
+
+# Verify on client
+ls ~/nfs_client
+
+# Switch to server terminal
+
+# Verify on server
+ls ~/nfs_shared
+
+
+# --------------------------------
+# PART 8: CLEANUP (OPTIONAL)
+# --------------------------------
+
+# Unmount
+sudo umount ~/nfs_client
+
+# Remove directories
+rm -r ~/nfs_shared
+rm -r ~/nfs_client
+
+# Stop NFS service
+sudo systemctl stop nfs-kernel-server
+
+
+===============================
+END OF COMMANDS
+===============================
